@@ -46,10 +46,12 @@ def get_sem_and_base_url():
         error = "Check your internet connection and try again later."
         return (False, error)
     selection = BeautifulSoup(base_url_html, "html.parser").find_all('option', attrs={"selected": "selected"})[0]
-    match selection.get_text().split()[0].lower():
-        case "first": sem = 1
-        case "second": sem = 2
-        case "midyear": sem = 3
+    if selection.get_text().split()[0].lower() == "first":
+        sem = 1
+    elif selection.get_text().split()[0].lower() == "second":
+        sem = 2
+    elif selection.get_text().split()[0].lower() == "midyear":
+        sem = 3
     base_url = root_url + selection['value'] + "/"
     return (sem, base_url)
 
