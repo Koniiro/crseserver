@@ -2,7 +2,6 @@ Flask
 Gunicorn
 bs4
 requests
-re
 datetime
 pathlib
 random
