@@ -3,7 +3,6 @@ Gunicorn
 bs4
 requests
 datetime
-pathlib
 random
 os
 json
